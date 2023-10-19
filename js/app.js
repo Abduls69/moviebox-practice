@@ -27,10 +27,9 @@ const displayMovies = (movies) => {
 
     movies.forEach(movie => {
         const markup = `
-            <div class="moviebox" data-movie-id="${movie.id}">
+            <div class="moviebox">
                 <img src="${imageUrl}${movie.backdrop_path}" alt="">
-                <p class="year">USA, 2016 - Current</p>
-                <h3>${movie.title}</h3>
+                <a href="movie.html?movieId=${movie.id}"><h3>${movie.title}</h3></a>
                 <p class="imdb"><span class="im">IMDB</span> ${movie.vote_average} / 10 <span class="num">${movie.vote_count}</span></p>
                 <p>Action, Adventure, Horror</p>
             </div>
@@ -67,35 +66,6 @@ const fetchAndDisplayMovieDetails = async (movieId) => {
       } catch (error) {
         console.error('Error fetching movie details:', error);
     }
-};
-
-// Function to display the modal with movie details
-const displayModal = (movieDetails) => {
-    const modal = document.getElementById('myModal');
-    const closeBtn = document.querySelector('.close');
-    const movieDetailsContainer = document.getElementById('movie-details');
-    movieDetailsContainer.innerHTML = '';
-
-    const markup = `
-        <h2>${movieDetails.title}</h2>
-        <p>Release Date: ${movieDetails.release_date}</p>
-        <p>Overview: ${movieDetails.overview}</p>
-        <p>Vote Average: ${movieDetails.vote_average}</p>
-        <!-- Add more details as needed -->
-    `;
-
-    movieDetailsContainer.innerHTML = markup;
-    modal.style.display = 'block';
-
-    closeBtn.addEventListener('click', () => {
-        modal.style.display = 'none';
-    });
-
-    window.addEventListener('click', (event) => {
-        if (event.target === modal) {
-            modal.style.display = 'none';
-        }
-    });
 };
 
 // Add a submit event listener to the form

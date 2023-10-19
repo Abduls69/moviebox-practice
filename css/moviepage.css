@@ -1,0 +1,46 @@
+body {
+    background-color: black;
+}
+
+#movie-details {
+    display: flex;
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  width: 100%; /* Optional: Make the div take up the full width of its container */
+  height: 100vh; 
+  background-color: black;
+}
+
+.moviebox {
+    max-width: 1100px;
+    margin: 0 auto;
+    overflow: hidden;
+    text-align: center;
+    padding: 50px 60px;
+}
+
+img {
+    width: 400px;
+}
+
+.overview {
+width: 600px; /* Your desired width */
+  display: block;
+  /* margin: 0 auto; */
+  color: white;
+  font-weight: bold;
+    margin: 40px 0;
+    line-height: 2;
+}
+
+.title {
+    color: cadetblue;
+}
+
+.release-date {
+    color: darkgrey;
+}
+
+.average-vote {
+    color: gold;
+}
